@@ -40,3 +40,4 @@ To run on Browserbase, add your API keys to .env and change `env: "LOCAL"` to `e
 2. Change `modelName: "gpt-4o"` to `modelName: "claude-3-5-sonnet-latest"` in [stagehand.config.ts](stagehand.config.ts)
 3. Change `modelClientOptions: { apiKey: process.env.OPENAI_API_KEY }` to `modelClientOptions: { apiKey: process.env.ANTHROPIC_API_KEY }` in [stagehand.config.ts](stagehand.config.ts)
 # stagehand-geminiclient
+# stagehand-geminiclient
