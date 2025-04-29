@@ -14,15 +14,22 @@ import StagehandConfig from "./stagehand.config.js";
 import chalk from "chalk";
 import { main } from "./main.js";
 import boxen from "boxen";
-import { google } from "@ai-sdk/google";
-import { AISdkClient } from "./external_clients/aisdk.js";
+// import { google } from "@ai-sdk/google";
+// import { AISdkClient } from "./external_clients/aisdk.js";
 
 async function run() {
+  // const stagehand = new Stagehand({
+  //   ...StagehandConfig,
+  //   llmClient: new AISdkClient({
+  //     model: google("gemini-2.5-pro-preview-03-25"),
+  //   }),
+  // });
   const stagehand = new Stagehand({
     ...StagehandConfig,
-    llmClient: new AISdkClient({
-      model: google("gemini-2.5-pro-preview-03-25"),
-    }),
+    modelName: "gemini-2.5-pro-preview-03-25",
+    modelClientOptions: {
+      apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
+    },
   });
   await stagehand.init();
 
